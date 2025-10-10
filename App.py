@@ -366,11 +366,14 @@ def run():
 
                 ##  recommendation
                 ds_keyword = ['tensorflow', 'keras', 'pytorch', 'machine learning', 'deep Learning', 'flask',
-                              'streamlit']
+                              'streamlit','ETL','Data Mining', 'Data Analysis','Machine Learning','Python',
+                                'R', 'MATLAB'
+                            ]
                 web_keyword = ['react', 'django', 'node jS', 'react js', 'php', 'laravel', 'magento', 'wordpress',
                                'javascript', 'angular js', 'c#', 'flask']
                 android_keyword = ['android', 'android development', 'flutter', 'kotlin', 'xml', 'kivy']
-                ios_keyword = ['ios', 'ios development', 'swift', 'cocoa', 'cocoa touch', 'xcode']
+                ios_keyword = ['ios', 'ios development', 'cocoa', 'cocoa touch', 'xcode',
+                                'Swift',]
                 uiux_keyword = ['ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping', 'wireframes',
                                 'storyframes', 'adobe photoshop', 'photoshop', 'editing', 'adobe illustrator',
                                 'illustrator', 'adobe after effects', 'after effects', 'adobe premier pro',
