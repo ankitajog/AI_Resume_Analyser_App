@@ -12,3 +12,4 @@ nltk
 pdfminer3
 spacy==2.3.5
 yt-dlp
+python-dotenv

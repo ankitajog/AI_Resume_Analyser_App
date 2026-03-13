@@ -15,8 +15,8 @@ import io, random
 from streamlit_tags import st_tags # type: ignore
 from PIL import Image # type: ignore
 import pymysql # type: ignore
-from Courses import ds_course, web_course, android_course, ios_course, uiux_course, resume_videos, interview_videos
-from Courses import network_course, database_course, cloud_course, devops_course
+from Courses import ds_course, web_course, android_course, ios_course, uiux_course, resume_videos, interview_videos # type: ignore
+from Courses import network_course, database_course, cloud_course, devops_course # type: ignore
 
 import re
 # import pafy
@@ -90,7 +90,17 @@ def is_valid_email(email):
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return re.match(pattern, email) is not None
 
-connection = pymysql.connect(host='localhost', user='root', password='A8041@abj#')
+import os
+from dotenv import load_dotenv # type: ignore
+
+load_dotenv() # Load variables from .env file
+
+# Use variables from the .env file
+connection = pymysql.connect(
+    host=os.getenv('DB_HOST', 'localhost'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD')
+)
 cursor = connection.cursor()
 
 
@@ -163,8 +173,11 @@ def create_admin_table():
     connection.commit()
 
 def validate_admin(username, password):
-    # hardcoded admin OR fetch from DB if needed
-    if username == "machine_learning_hub" and password == "mlhub123":
+    # Fetch these from .env as well
+    admin_user = os.getenv('ADMIN_USER')
+    admin_pass = os.getenv('ADMIN_PASSWORD')
+    
+    if username == admin_user and password == admin_pass:
         return {"id": 1, "username": username}
     return None
 

@@ -1,0 +1,13 @@
+# Credentials
+.env
+
+# Python files
+__pycache__/
+*.py[cod]
+
+# Uploaded Resumes (Privacy protection)
+Uploaded_Resumes/*
+!Uploaded_Resumes/.gitkeep
+
+# Streamlit folders
+.streamlit/
